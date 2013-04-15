@@ -76,7 +76,8 @@ forwarder_address_replace = <<TERMINATE
 defaultGroup = default_9997
  
 [tcpout:default_9997]
-server = ec2-107-20-220-21.compute-1.amazonaws.com:9997,ec2-107-21-230-79.compute-1.amazonaws.com:9997,ec2-107-21-244-183.compute-1.amazonaws.com:9997
+#Contained dns names for splunk forwarders.
+server = ''
 autoLB = true
 TERMINATE
 
