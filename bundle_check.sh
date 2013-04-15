@@ -18,6 +18,8 @@ sudo /opt/glassfish/default/glassfish/bin/asadmin list-components | grep web >> 
 
 bundle_count=$(wc -l artifacts_to_install | awk '{print $1}')
 install_count=$(wc -l artifacts_installed | awk '{print $1}')
+#Instead of calling an external Ruby script I should be using the EC2 API tools that come with the instance.
+#Also to note, an IAM role needs to be established so the instance can change its own tags.
 if [ $bundle_count == $install_count ]
 then
   ruby tag_change.rb installed
